@@ -1,0 +1,4 @@
+Bonus: What is Interpreter? what is the different between compiler and interpreter?
+
+	-In computer science, an interpreter is a computer program that directly executes instructions written in a programming or scripting language, without requiring them previously to have been compiled into a machine language program.
+	-A compiler is a translator which transforms source language (high-level language) into object language (machine language). In contrast with a compiler, an interpreter is a program which imitates the execution of programs written in a source language. Another difference between Compiler and interpreter is that Compiler converts the whole program in one go on the other hand Interpreter converts the program by taking a single line at a time.

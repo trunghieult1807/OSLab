@@ -1,0 +1,24 @@
+1. What resources are used when a thread is created? How do they differ from those used when a process is created?
+  - When a thread is created the threads does not require any new resources to execute the thread shares the resources like memory of the process to which they belong to.
+  - Thread creation uses less resources than process creation.
+  Because threads share data and address space among each other in the same process, while a new process creation is very heavyweight because it always requires new address space.
+2. Is it possible to have concurrency but not parallelism? Explain.
+  - Yes, it is possible.
+  - Concurrency: Processing at the same time.
+  - Parallelism: Start running at the same time.
+  - It is concurrent but not parallel when multitasking on a single-core machine, the processor only could handle 1 process at the same time.
+3. Distinguish thread and process?
+  - Process:
+    + Process is an executing program.
+    + Each process has its own isolated memory.
+    + Consume more resources and hard to communicate because process has a separating memory.
+  - Thread:
+    + Thread is a segment of a process.
+    + Threads in a process share data and memory with each other. Each thread has its own stack and registers.
+    + Consume fewer resources and take less time to communicate but easy to get data conflict it some error occur because threads in a process share the same global data.
+4. The benefit of multi threading?
+Can split into 4 categories:
+  - Responsiveness: It allows a program to continue running even if a part of it is blocked.
+  - Resource Sharing: It takes less time to communicate between every thread.
+  - Economy: Threads share memory with the process it belongs, it is more economical to create and context switch threads
+  - Scalability: It allows the program to do multi tasks at the same time.

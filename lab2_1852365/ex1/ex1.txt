@@ -1,0 +1,40 @@
+1. Compiling a program in the first time usually takes a longer time in comparison with the next re-compiling. What is the reason?
+	
+It usually takes more time for the first compilation because the project needs to load some basic or external headers or libraries that included in it. When we re-compile the project, it is much faster because these headers or libraries don't need to be loaded again.
+
+2. Is there any Makefile mechanism for other programming languages? If it has, give an example?
+
+Yes, there is. For example a simple Makefile for a Java:
+
+	
+	JCC = javac
+
+	JFLAGS = -g
+
+	default: Average.class Convert.class Volume.class
+
+	Average.class: Average.java
+	        $(JCC) $(JFLAGS) Average.java
+
+	Convert.class: Convert.java
+	        $(JCC) $(JFLAGS) Convert.java
+	
+	Volume.class: Volume.java
+ 		$(JCC) $(JFLAGS) Volume.java
+
+	clean: 
+       		$(RM) *.class
+
+#
+# $(JCC) $(JFLAGS) *.java 
+# Here is the structure to create .class files from .java files
+# Just like create object file from source codes in c program
+#
+# Typing 'make' will invoke the default one
+# Typing 'make clean' will remove all .class files and start over from scratch
+
+3. In case of source code files located in different places, how can we write a Makefile?
+
+We can use '--include-dir' option, directories must in order: prefix/include(normally /usr/local/include)/usr/gnu/include, usr/local/include, /usr/include
+
+ 

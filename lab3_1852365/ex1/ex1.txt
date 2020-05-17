@@ -1,0 +1,7 @@
+1. What the output will be at LINE A?
+  The output is: "PARENT: value = 5"
+2. When a process creates a new process using the fork() operation, which of the following states is shared between the parent process and the child process?
+  A. Stack
+  B. Heap
+  C. Shared memory segments
+The answer is C

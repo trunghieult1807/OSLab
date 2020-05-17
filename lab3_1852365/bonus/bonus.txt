@@ -1,0 +1,63 @@
+1. What will we see on the screen?
+    #include <stdio.h>
+    #include <unistd.h>
+    int main() {
+      int a = 10;
+      if (fork() == 0) {
+        a++;
+      } else {
+        wait(); printf(“%d\n”, a);
+      }
+    }
+
+  Answer: 10
+
+2. Write a program that when executing, it create a new process and then both of them print their PID to stdout.
+
+  Answer:
+
+    #include <stdio.h>
+    #include <unistd.h>
+    int main() {
+      pid_t a;
+      a = fork();
+      if(a > 0) {
+        printf("PID of parent process: %d\n",  getpid());
+      }
+      if(a == 0) {
+        printf("PID of child process: %d\n",  getpid());
+      }
+      return 0;
+    }
+
+3. Write a program that when executing, it has the OS to create two duplicate copies of itself.
+
+  Answer:
+
+    #include <stdio.h>
+    #include <unistd.h>
+    int main() {
+      pid_t a;
+      a = fork();
+      if(a > 0) {
+        pid_t b;
+        b = fork();
+      }
+      return 0;
+    }
+
+4. Draw the tree of processes created by running the following program
+    #include <stdio.h>
+    #include <unistd.h>
+    int main() {
+      fork();
+      fork();
+    }
+
+  Answer:
+
+  A__ C
+  |__ B__D
+
+  A is parent of B and C, B is parent of D.
+  The first fork() call will generate B and the next fork() call will create C and D.
