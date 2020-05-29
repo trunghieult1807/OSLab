@@ -2,6 +2,7 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <semaphore.h>
+#include <unistd.h>
 #define NUM_TICKETS 35
 #define NUM_SELLERS 4
 #define true 1
@@ -38,7 +39,7 @@ void *sellTicket(void *arg){
       done = true;
     }
     else{
-      numTickets−−;
+      numTickets-=1;
       numSoldByThisThread++;
       printf("Thread %d sold one (%d left)\n", tid , numTickets);
     }
