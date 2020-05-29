@@ -49,14 +49,13 @@ int main (int argc, char *argv[]) {
       for (int i = 0; i < NUM_THREADS; i++) {
          pthread_join(threads[i], &retVal);
       }
-      printf("Estimated pi   : %0.40Lf \n", pi);
-      printf("Exact pi       : 3.1415926535897932384626433832795028841971\n");
+      printf("%0.40Lf \n", pi);
     }
     else {
       printf("Need an argument!\n");
     }
 
     end = time(NULL);
-    printf("Running time: %f\n", (double)(end-start));
+//    printf("Running time: %f\n", (double)(end-start));
     return 0;
 }
