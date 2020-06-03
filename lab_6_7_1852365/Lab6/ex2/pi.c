@@ -8,6 +8,7 @@
 long double pi = 0.0;
 pthread_mutex_t piLock;
 long numOfPoints;
+clock_t start, end;
 
 
 void *calPi(void *tid) {
@@ -22,9 +23,9 @@ void *calPi(void *tid) {
     }
 
     area *= width;
-    //pthread_mutex_lock(&piLock);
+    pthread_mutex_lock(&piLock);
     pi += area;
-    //pthread_mutex_unlock(&piLock);
+    pthread_mutex_unlock(&piLock);
 
     return NULL;
 }
@@ -56,7 +57,7 @@ int main (int argc, char *argv[]) {
     }
 
     //end = time(NULL);
-    end = clock()
+    end = clock();
     printf("Running time: %f\n", ((double) (end - start)) / CLOCKS_PER_SEC);
     return 0;
 }

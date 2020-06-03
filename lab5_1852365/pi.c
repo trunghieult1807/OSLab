@@ -30,8 +30,8 @@ void *calPi(void *tid) {
 }
 int main (int argc, char *argv[]) {
     time_t start, end;
-    //start = time(NULL);
-    start = clock();
+    start = time(NULL);
+
 
     pthread_t threads[NUM_THREADS];
     void *retVal;
@@ -55,8 +55,7 @@ int main (int argc, char *argv[]) {
       printf("Need an argument!\n");
     }
 
-    //end = time(NULL);
-    end = clock()
-    printf("Running time: %f\n", ((double) (end - start)) / CLOCKS_PER_SEC);
+    end = time(NULL);
+    printf("Running time: %f\n", (double)(end-start));
     return 0;
 }
